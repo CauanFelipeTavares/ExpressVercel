@@ -32,7 +32,7 @@ app.get('/pages/:page', (req, res) => {
 
 })
 
-app.listen(process.env.PORT || 8080, () => console.log('Rodando interface'))
+app.listen(80, () => console.log('Rodando interface'))
 
 function criarFS(name, conteudo){
 
