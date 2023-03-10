@@ -3,9 +3,17 @@ const app = express()
 const fs = require('fs')
 const path = require('path')
 
+app.use(express.static(__dirname + '/assets/pages'))
+
 app.get('/', (req, res) => {
 
     res.send('Ok hehehe')
+
+})
+
+app.get('/localhost', (req, res) => {
+
+  res.sendFile(__dirname + '/assets/pages/localhost.html')
 
 })
 
