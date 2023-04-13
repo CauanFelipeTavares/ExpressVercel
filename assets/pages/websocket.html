@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>WebSocket Test</title>
+  </head>
+  <body>
+    <h1>WebSocket Test</h1>
+    <div id="output"></div>
+
+    <script>
+
+      const socket = new WebSocket('ws://localhost/ws')
+
+      //setInterval(() => socket.send('1'), 2000)
+
+      // socket.onmessage = function (event) {
+
+      //   document.getElementById('output').innerHTML = event.data
+
+      // }
+
+    </script>
+  </body>
+</html>
