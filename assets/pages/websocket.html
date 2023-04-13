@@ -10,7 +10,13 @@
 
     <script>
 
-      const socket = new WebSocket('ws://localhost/ws')
+      let url = window.location.href
+
+      url.includes('https') ? url = url.replace('https', 'ws') : url = url.replace('http', 'ws')
+
+      console.log('url', url)
+
+      const socket = new WebSocket(url)
 
       //setInterval(() => socket.send('1'), 2000)
 
