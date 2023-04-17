@@ -21,7 +21,27 @@ app.get('/banco/:sticker', function (req, res) {
   res.sendFile(path.join(__dirname + `/sticker/${req.params.sticker}.webp`))
 })
 
+const Pusher = require("pusher");
+
 app.get('/ws', (req, res) => {
+
+  let pusher = new Pusher({
+    appId: "1584150",
+    key: "00301fed21bcaf1b2def",
+    secret: "99a3d8e948558d607209",
+    cluster: "sa1",
+    useTLS: true
+  });
+
+  console.log('Rota ws')
+
+  // let channel = pusher.subscribe('my-channel');
+
+  // Bind a callback function to an event within the subscribed channel
+
+  pusher.trigger("my-channel", "my-event", {
+    message: "hello "
+  });
 
   res.sendFile(__dirname + '/assets/pages/websocket.html')
 
