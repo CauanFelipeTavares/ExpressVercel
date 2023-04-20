@@ -13,14 +13,17 @@
       let url = window.location.href
 
       url.includes('https') ? url = url.replace('https', 'wss') : url = url.replace('http', 'ws')
-
-      url = 'wss://express-vercel-five-fawn.vercel.app/ws'
+//wss://31.220.61.189
+//ws://localhost
+      url = 'wss://31.220.61.189/ws'
 
       console.log('url', url)
 
       try{
 
-        const socket = new WebSocket(url).onclose((ev) => console.log(ev))
+        const socket = new WebSocket(url)
+
+        socket.onclose((ev) => console.log('Err', ev))
 
         console.log(socket)
 
